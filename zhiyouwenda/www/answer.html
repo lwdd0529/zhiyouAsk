@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
+		<link rel="stylesheet" type="text/css" href="all.css"/>
+	</head>
+	<body>
+		
+		<nav class="navbar navbar-inverse navbar-fixed-top">
+			<div class="container">
+				<div class="row">
+						
+					<div class="navbar-title">
+						<span id="goBack" class="glyphicon glyphicon-chevron-left pull-left"></span>
+					    回答
+					    <span id="home" class="glyphicon glyphicon-home pull-right"></span>
+					</div>	
+						
+				</div>
+			</div>
+			
+			
+		</nav>
+		
+		<div class="container">
+			<form action="/question/ask" method="post">
+				<div class="form-group">
+					<textarea name="content" class="form-control" rows="12" cols="" placeholder="内容"></textarea>
+				</div>
+				<input type="submit" class="btn btn-success form-control" name="" id="" value="回答" />
+			</form>
+		
+		</div>
+		
+		
+		
+	</body>
+	<script src="js/jquery.js"></script>
+	<script src="js/jquery.cookie.js"></script>
+	<script src="js/bootstrap.js"></script>
+	<script src="scripts/answer.js"></script>
+	
+</html>
