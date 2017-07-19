@@ -1,20 +1,16 @@
-//获取首页的数据
-// 从本地缓存 cookie 中取出 petname 的值
-var petname = $.cookie('petname');
+var petname = $.cookie('petname');   //获取首页的数据 从本地缓存 cookie 中取出 petname 的值
 $('#ask').click(function(){
 	petname ? location.href = 'ask.html' : location.href = 'login.html';
 });
-// 判断有没有登录，决定 user 图片样式和行为
-if(petname){
-	// 如果用户登录了 则可以将用户名显示出来
+
+if(petname){    // 如果用户登录了 则可以将用户名显示出来	
 	$('#user').find('span').last().text(petname);
 }else{
 	$('#user').find('span').last().text('登录').end().end().removeAttr('data-toggle').click(function(){
 		location.href = 'login.html';
 	});
 }
-// 获取首页的数据
-$.get('/question/all',function(resData){
+$.get('/question/all',function(resData){// 获取首页的数据
 	var htmlStr = '';
 	for(var i = 0;i < resData.length; i++){
 		var question = resData[i];
@@ -27,9 +23,7 @@ $.get('/question/all',function(resData){
 		htmlStr += question.content
 		htmlStr += '<div class="media-footing">' + formatDate(new Date(question.time)) + '&#x3000;' + formatIp(question.ip) + '</div>';
 		htmlStr += '</div></div>'
-	// 判断这个问题 是否有人回答过
-		if(question.answers){
-			// 有人回答过,显示回答
+		if(question.answers){// 有人回答过,显示回答			
 			for(var j = 0; j < question.answers.length; j++){
 				var answer = question.answers[j];
 				htmlStr += '<div class="media media-child">'
